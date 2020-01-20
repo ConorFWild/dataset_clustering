@@ -276,7 +276,7 @@ if __name__ == "__main__":
     cluster_df = cluster_datasets_luigi(aligned_ccp4s,
                                         system_processed_dir,
                                         "joblib",
-                                        20,
+                                        int(args.n_procs),
                                         )
     # cluster_df.to_csv(str(output_path / "clustering.csv"))
 
