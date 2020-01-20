@@ -4,8 +4,19 @@ import clipper_python
 
 from mdc3.types.real_space import MCDXMap
 
+import os
+import psutil
+
+def memory_usage_psutil():
+    # return the memory usage in percentage like top
+    process = psutil.Process(os.getpid())
+    mem = process.memory_percent()
+    return mem
+
 
 def ccp4_path_to_np(ccp4_path):
+    print(memory_usage_psutil())
+
     xmap = load_ccp4_map(ccp4_path)
 
     print("exporting numpy")
