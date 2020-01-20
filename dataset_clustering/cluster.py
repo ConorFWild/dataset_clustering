@@ -234,9 +234,11 @@ def mapdict(func, dictionary, executor):
     keys = list(dictionary.keys())
     values = list(dictionary.values())
 
-    results = executor(func,
-                       values,
-                       )
+    # results = executor(func,
+    #                    values,
+    #                    )
+
+    results = [func(value) for value in values]
 
     return {key: result for key, result in zip(keys, results)}
 

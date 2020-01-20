@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e647a16-ce2c-47a7-950d-2d4b6e3cef82" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/cluster_xcdb_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/program/cluster_xcdb_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset_clustering/cluster.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset_clustering/cluster.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,11 +12,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dataset_clustering/cluster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="978" column="32" lean-forward="true" selection-start-line="978" selection-start-column="32" selection-end-line="978" selection-end-column="32" />
+            <state relative-caret-position="315">
+              <caret line="240" column="46" selection-start-line="240" selection-start-column="46" selection-end-line="240" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataset_clustering/xmap_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -34,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/program/cluster_xcdb_single.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="362">
@@ -114,8 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>embed</find>
-      <find>get_map_l</find>
       <find>get_map_cl</find>
       <find>get_m</find>
       <find>xmap_to</find>
@@ -141,7 +150,11 @@
       <find>structure_</find>
       <find>structure_fa</find>
       <find>cluster_datasets_l</find>
+      <find>LoaderCC</find>
       <find>cluster_dataset</find>
+      <find>load_ccp</find>
+      <find>ccp4_pat</find>
+      <find>mapdic</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -173,6 +186,7 @@
         <option value="$PROJECT_DIR$/experiments/experiment_xcdb_luigi/cluster_xcdb_luigi_single.py" />
         <option value="$PROJECT_DIR$/dataset_clustering/luigi_lib.py" />
         <option value="$PROJECT_DIR$/program/cluster_xcdb_single.py" />
+        <option value="$PROJECT_DIR$/dataset_clustering/cluster.py" />
       </list>
     </option>
   </component>
@@ -457,13 +471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset_clustering/visualise.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/program/visualise.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -488,10 +495,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset_clustering/cluster.py">
+    <entry file="file://$PROJECT_DIR$/dataset_clustering/visualise.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="978" column="32" lean-forward="true" selection-start-line="978" selection-start-column="32" selection-end-line="978" selection-end-column="32" />
+        <state relative-caret-position="75">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -499,6 +506,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
           <caret line="278" column="56" selection-start-line="278" selection-start-column="56" selection-end-line="278" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset_clustering/xmap_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset_clustering/cluster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="240" column="46" selection-start-line="240" selection-start-column="46" selection-end-line="240" selection-end-column="46" />
         </state>
       </provider>
     </entry>
