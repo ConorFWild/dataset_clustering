@@ -118,7 +118,7 @@ if __name__ == "__main__":
                            clean_run=bool(cmd_args.clean_run),
                            pdb_regex=cmd_args.pdb_regex,
                            mtz_regex=cmd_args.mtz_regex,
-                           structure_factors=cmd_args,
+                           structure_factors=cmd_args.structure_factors,
                            )
 
     cluster_dfs: Dict[str, pd.DataFrame] = {}
