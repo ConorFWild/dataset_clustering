@@ -122,7 +122,6 @@ def normalise_structure(reference_pdb_path, dtag, output_path):
     translated_structure.output(output_path / "{}_normalised.pdb".format(dtag))
 
 
-
 class AlignMapToReference(luigi.Task):
     dtag = luigi.Parameter()
     reference_dtag = luigi.Parameter()
@@ -130,6 +129,7 @@ class AlignMapToReference(luigi.Task):
     reference_pdb_path = luigi.Parameter()
     output_path = luigi.Parameter()
     min_res = luigi.Parameter()
+    structure_factors = luigi.Parameter()
 
     def run(self):
         try:
@@ -138,12 +138,13 @@ class AlignMapToReference(luigi.Task):
             print(e)
 
         align_map_to_reference(self.dtag,
-                        self.reference_dtag,
-                        self.dataset_path,
-                        self.reference_pdb_path,
-                        self.output_path,
-                        self.min_res,
-                        )
+                               self.reference_dtag,
+                               self.dataset_path,
+                               self.reference_pdb_path,
+                               self.output_path,
+                               self.min_res,
+                               structure_factors=self.structure_factors,
+                               )
 
         mark_done(self.output_path / "done.txt")
 
@@ -157,8 +158,8 @@ def align_map_to_reference(dtag,
                            reference_pdb_path,
                            output_path,
                            min_res,
+                           structure_factors="FWT,PHWT",
                            ):
-
     # Load structures
     f_ref = PDBFile(reference_pdb_path)
     reference_structure = structure_biopython_from_pdb(f_ref)
@@ -166,7 +167,9 @@ def align_map_to_reference(dtag,
     moving_structure = structure_biopython_from_pdb(f_moving)
 
     # Load xmap
-    xmap = mdc3.types.real_space.xmap_from_path(dataset_path["mtz_path"])
+    xmap = mdc3.types.real_space.xmap_from_path(dataset_path["mtz_path"],
+                                                structure_factors,
+                                                )
 
     # Get box limits from reference structure
     box_limits = np.max(np.vstack([atom.coord
@@ -219,9 +222,9 @@ def align_map_to_reference(dtag,
     cell = clipper_python.Cell(clipper_python.Cell_descr(grid_params[0],
                                                          grid_params[1],
                                                          grid_params[2],
-                                                         np.pi/2,
-                                                         np.pi/2,
-                                                         np.pi/2,
+                                                         np.pi / 2,
+                                                         np.pi / 2,
+                                                         np.pi / 2,
                                                          )
                                )
     mdc3.types.real_space.output_nxmap(origin_nxmap,
@@ -235,4 +238,3 @@ def align_map_to_reference(dtag,
 
     # Output aligned pdb
     moving_structure.output(output_path / "{}_aligned.pdb".format(dtag))
-
