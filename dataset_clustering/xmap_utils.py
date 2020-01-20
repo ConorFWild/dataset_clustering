@@ -8,6 +8,8 @@ from mdc3.types.real_space import MCDXMap
 def ccp4_path_to_np(ccp4_path):
     xmap = load_ccp4_map(ccp4_path)
 
+    print("exporting numpy")
+
     xmap_np = xmap.export_numpy()
 
     return xmap_np
@@ -76,11 +78,16 @@ def output_mean_nxmap(mean_map_np, cell, path, grid_params):
 
 
 def load_ccp4_map(ccp4_path):
+    print("Opening XMAP")
     xmap = clipper_python.Xmap_float()
 
+    print("starting map file")
     mapout = clipper_python.CCP4MAPfile()
+    print("opening read")
     mapout.open_read(str(ccp4_path))
+    print("importing xmap")
     mapout.import_xmap_float(xmap)
+    print("closing read")
     mapout.close_read()
     return xmap
 
